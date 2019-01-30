@@ -1,0 +1,2 @@
+# Exclude manually added SSH keys
+roles/ssh_keys/files/*

@@ -1,0 +1,16 @@
+---
+
+- name: Install RHEL 7 guest agent
+  yum:
+    name: ovirt-guest-agent-common
+    enablerepo: rhel-7-server-rh-common-rpms
+    state: present
+
+- name: Start RHEL 7 guest agents
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  with_items:
+    - ovirt-guest-agent
+    - qemu-guest-agent

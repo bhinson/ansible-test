@@ -1,0 +1,7 @@
+---
+
+- name: Update hostname
+  hosts: all
+  roles:
+    - role: update-hostname
+

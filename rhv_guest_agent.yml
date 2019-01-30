@@ -1,0 +1,7 @@
+---
+
+- name: Install and start RHV guest agents
+  hosts: all
+  roles:
+    - role: rhv_guest_agent
+
