@@ -1,0 +1,7 @@
+---
+
+- name: Test connectivity
+  hosts: all
+  roles:
+    - role: ping-test
+
