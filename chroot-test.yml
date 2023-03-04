@@ -2,6 +2,8 @@
 
 - name: Test connectivity
   hosts: all
+  connection: community.general.chroot
+  gather_facts: no
   roles:
     - role: ping-test
 
