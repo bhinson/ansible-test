@@ -10,6 +10,7 @@
         {% raw %}
         $Job = 1..5 | ForEach-Object -Parallel { "Hello $_"; sleep 1; } -ThrottleLimit 5 -AsJob
         $job | Wait-Job | Receive-Job
+        {% endraw %}
       delegate_to: "ad1.home"
       args:
         executable: pwsh
