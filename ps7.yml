@@ -1,0 +1,14 @@
+---
+ 
+- name: ps7_test
+  hosts: localhost
+  gather_facts: true
+  tasks:
+     
+    - name: Start/Stop Servers in SCCM Collection
+      ansible.windows.win_shell: |
+        $Job = 1..5 | ForEach-Object -Parallel { "Hello $_"; sleep 1; } -ThrottleLimit 5 -AsJob
+        $job | Wait-Job | Receive-Job
+      delegate_to: "ad1.home"
+      args:
+        executable: pwsh
