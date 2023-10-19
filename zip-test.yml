@@ -1,0 +1,11 @@
+---
+
+- name: Test connectivity
+  hosts: all
+  tasks:
+
+  - name: Unzip archive
+    ansible.builtin.unarchive:
+      src: /tmp/test.zip
+      dest: /tmp
+      remote_src: yes
