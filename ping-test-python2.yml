@@ -1,0 +1,10 @@
+---
+
+- name: Test connectivity
+  hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
+
+  roles:
+    - role: ping-test
+
